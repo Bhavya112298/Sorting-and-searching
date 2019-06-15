@@ -1,0 +1,32 @@
+def prime(num):
+    count=0
+    for i in range(1,num+1):
+        if num%i==0:
+            count=count+1
+    if count==2:
+        return True
+s=[]
+
+n=int(raw_input())
+prev=n-1
+nxt=n+1
+
+while len(s)<1:
+    if prime(nxt)==True:
+        s.append(nxt)
+    nxt=nxt+1    
+while len(s)<2:
+    if prime(prev)==True:
+        s.append(prev)
+    prev=prev-1   
+
+
+a=s[0]-n
+b=n-s[1]
+if a==b:
+    print min(s[0],s[1])
+    
+elif min(a,b)==a:
+    print s[0]
+else:
+    print s[1]
