@@ -1,0 +1,21 @@
+
+t=int(raw_input())
+for k in range(t):
+ n,m=map(int,raw_input().split())
+ l1=map(int,raw_input().split())
+ l2=map(int,raw_input().split())
+ l3=[]
+ l4=[]
+ for s in l2:
+    if s in l1:
+        a=l1.count(s)
+        for i in range(a):
+            l3.append(s)
+
+ for i in range(len(l1)):
+    if l1[i] not in l2:
+        l4.append(l1[i])
+ l4.sort()
+ l5=l3+l4
+        
+ print ' '.join(map(str,l5))  
