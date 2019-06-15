@@ -1,0 +1,33 @@
+n=int(raw_input())
+l=map(int,raw_input().split())
+def desc(arr):
+    n=len(arr)
+    for i in range(n):
+        for j in range(n-i-1):
+            if arr[j]<arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    return arr  
+
+def incs(arr):
+    n=len(arr)
+    for i in range(n):
+        for j in range(n-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+    return arr   
+   
+even=[]
+odd=[]
+
+for i in l:
+    if i%2==0:
+        even.append(i)
+    else:
+        odd.append(i)
+
+a=incs(even)
+b=desc(odd)
+
+c=b+a
+
+print ' '.join(map(str,c))
